@@ -1,29 +1,22 @@
 import React, { useState } from 'react'
-// import PropTypes from 'prop-types';
 
 export default function Textform(props) {
     const handlUpClick = () => {
-        console.log('Button has been clicked!' + text);
         let newText = text.toUpperCase();
         updateTextHere(newText)
-
     }
 
-
     const handlLowClick = () => {
-        console.log('Button has been clicked!' + text);
         let newText = text.toLowerCase();
         updateTextHere(newText)
     }
 
 
     const handlUpFirstClick = () => {
-        console.log('Button has been clicked!' + text);
         let newText = text.replace(/\b(\w)/g, s => s.toUpperCase());
         updateTextHere(newText)
     }
     const handleExtraSpaces = () => {
-        console.log('Button has been clicked!' + text);
         let newText = text.split(/[ ]+/);
         updateTextHere(newText.join(" "))
     }
@@ -35,13 +28,11 @@ export default function Textform(props) {
     }
 
     const handleCopy = () => {
-        console.log('Button has been clicked!' + text);
         let copyText = document.getElementById('myBox');
         copyText.select();
         navigator.clipboard.writeText(copyText.value)
     }
     const [text, updateTextHere] = useState("Enter text here");
-    // updateTextHere("asasaa")
     return (
         <>
             <div className="mb-3" style={{color : props.mode === 'dark' ? 'white' : 'black'}}>
